@@ -1,0 +1,56 @@
+/* GLOBAL RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 40px;
+    color: #333;
+  }
+  
+  /* Container générique */
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Boutons */
+  button {
+    background-color: #007b5e;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #005944;
+  }
+  
+  /* Inputs */
+  input, select {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Cartes */
+  .card {
+    background-color: #f1f1f1;
+    border-left: 5px solid #007b5e;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+  }

@@ -1,0 +1,41 @@
+<div class="container">
+
+    <!-- Lien vers la page d'ajout -->
+    <div style="text-align: right; margin-bottom: 20px;">
+      <a routerLink="/add" class="nav-link">
+        ➕ Ajouter une opération
+      </a>
+    </div>
+  
+    <h2>🔎 Consulter les opérations d’un compte</h2>
+  
+    <!-- Champ de recherche -->
+    <input
+      [(ngModel)]="accountNumber"
+      placeholder="Numéro de compte"
+      class="input-field"
+    />
+    <button (click)="loadOperations()">Rechercher</button>
+  
+    <!-- Résultat : Liste des opérations -->
+    <div *ngIf="operations.length > 0" class="cards">
+      <div *ngFor="let op of operations" class="card">
+        <p><strong>Type :</strong> {{ op.type }}</p>
+        <p><strong>Montant :</strong> {{ op.amount }}</p>
+        <p><strong>Date :</strong> {{ op.date | date:'short' }}</p>
+  
+        <!-- Détails spécifiques au prêt -->
+        <div *ngIf="op.type === 'loan'">
+          <p><strong>Intérêt :</strong> {{ op.interest }}%</p>
+          <p><strong>Paiements :</strong> {{ op.payments }}</p>
+          <p><strong>Date du prêt :</strong> {{ op.loanDate | date:'shortDate' }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Aucun résultat -->
+    <div *ngIf="operations.length === 0 && searched">
+      <p>Aucune opération trouvée pour ce compte.</p>
+    </div>
+  
+  </div>
